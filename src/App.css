@@ -1,0 +1,168 @@
+/* App.css — Game of Thrones Cold Edition */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cinzel', serif;
+  background: url('/public/textures/devol.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #e0e0e0;
+}
+
+.app-bg {
+  backdrop-filter: blur(3px) brightness(0.8);
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+button, .ant-btn {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #555 !important;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+button:hover, .ant-btn:hover {
+  background-color: #2a2a2a !important;
+  color: #fff !important;
+  border-color: #999 !important;
+}
+
+.ant-modal-content {
+  background: url('/public/textures/smoke.png') repeat;
+  border: 2px solid #555;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.ant-modal-title {
+  font-family: 'Cinzel', serif;
+  color: #c9c9c9;
+  text-shadow: 1px 1px 3px #000;
+}
+
+input[type="text"], input[type="file"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #999;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #e0e0e0;
+}
+
+.card {
+  background: rgba(10, 10, 10, 0.7);
+  border: 1px solid #999;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+}
+
+.card p {
+  font-size: 18px;
+  margin: 8px 0;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.status-text {
+  color: #88ccff;
+  font-weight: bold;
+}
+
+.carousel-img {
+  width: 240px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.snowfall {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: 
+    radial-gradient(white 2px, transparent 3px),
+    radial-gradient(white 2px, transparent 3px),
+    radial-gradient(white 2px, transparent 3px);
+  background-size: 100px 100px;
+  background-position: 0 0, 50px 50px, 25px 75px;
+  animation: snowfall 10s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes snowfall {
+  0% {
+    background-position: 0 0, 50px 50px, 25px 75px;
+  }
+  100% {
+    background-position: 0 100vh, 50px 150vh, 25px 175vh;
+  }
+}
+
+.white-walker, .direwolf {
+  position: fixed;
+  top: -100px;
+  width: 250px;
+  height: 400px;
+  opacity: 0.15;
+  z-index: 9999; 
+}
+
+.white-walker {
+  right: 300px;
+  background: url('/public/walf.png') no-repeat center;
+  background-size: contain;
+}
+
+.direwolf {
+  left: 300px;
+  background: url('/public/king.png') no-repeat center;
+  background-size: contain;
+}
+/* Адаптивность для экранов меньше 768px */
+@media (max-width: 768px) {
+  .got-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .got-input, .got-input-file {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .white-walker, .direwolf {
+    display: none;
+  }
+
+  .ant-modal-content {
+    padding: 16px;
+  }
+
+  .got-card {
+    padding: 12px;
+  }
+
+  .carousel-img {
+    height: 150px;
+  }
+
+  .text-4xl {
+    font-size: 28px;
+  }
+}
